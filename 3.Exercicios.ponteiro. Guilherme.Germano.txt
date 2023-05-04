@@ -1,0 +1,138 @@
+Exercicio 1
+     #include <stdio.h>
+
+int main()
+{
+    int num1, num2;
+    int *pont1, *pont2;
+    
+    pont1 = &num1;
+    pont2 = &num2;
+    
+    printf("Digite o primeiro valor: ");
+    scanf("%d", pont1);
+    printf("Digite o segundo valor: ");
+    scanf("%d", pont2);
+    
+    
+    printf("Soma dos valores: %d + %d = %d \n", *pont1, *pont2, (*pont1 + *pont2));
+    printf("Subtrção dos valores: %d - %d = %d \n", *pont1, *pont2, (*pont1 - *pont2));
+    printf("Divisão dos valores: %d / %d = %d \n", *pont1, *pont2, (*pont1 / *pont2));
+    printf("Multiplicalção dos valores: %d x %d = %d \n", *pont1, *pont2, (*pont1 * *pont2));
+    
+}
+_______________________________________________________________________________________________
+
+Exercicio 2
+     #include <stdio.h>
+int soma(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 + *pont2);
+    return num3;
+}
+
+int subtracao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 - *pont2);
+    return num3;
+}
+
+int multiplicacao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 * *pont2);
+    return num3;
+}
+
+int divisao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 / *pont2);
+    return num3;
+}
+
+int main()
+{
+    int num1, num2;
+    int *pont1, *pont2;
+    
+    pont1 = &num1;
+    pont2 = &num2;
+    
+    printf("Digite o primeiro valor: ");
+    scanf("%d", pont1);
+    printf("Digite o segundo valor: ");
+    scanf("%d", pont2);
+    
+    
+    printf("Soma dos valores: %d + %d = %d \n", *pont1, *pont2, soma(pont1, pont2));
+    printf("Subtrção dos valores: %d - %d = %d \n", *pont1, *pont2, subtracao(pont1, pont2));
+    printf("Divisão dos valores: %d x %d = %d \n", *pont1, *pont2, multiplicacao(pont1, pont2));
+    printf("Multiplicalção dos valores: %d / %d = %d \n", *pont1, *pont2, divisao(pont1, pont2));
+________________________________________________________________________________
+Exercicio 3 
+     #include <stdio.h>
+int soma(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 + *pont2);
+    return num3;
+}
+
+int subtracao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 - *pont2);
+    return num3;
+}
+
+int multiplicacao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 * *pont2);
+    return num3;
+}
+
+int divisao(int *pont1, int *pont2) {
+    int num3;
+    num3 = (*pont1 / *pont2);
+    return num3;
+}
+
+int main()
+{
+    int num1, num2, result;
+    char op;
+    int *pont1, *pont2;
+    
+    pont1 = &num1;
+    pont2 = &num2;
+    
+    printf("Digite o primeiro valor: ");
+    scanf("%d", pont1);
+    printf("Digite o segundo valor: ");
+    scanf("%d", pont2);
+    
+    printf("Digite a operacao (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    switch(op)
+    {
+        case '+':
+            result = soma(pont1, pont2);
+            printf("Resultado: %d\n", result);
+            break;
+        case '-':
+            result = subtracao(pont1, pont2);
+            printf("Resultado: %d\n", result);
+            break;
+        case '*':
+            result = multiplicacao(pont1, pont2);
+            printf("Resultado: %d\n", result);
+            break;
+        case '/':
+            result = divisao(pont1, pont2);
+            if(result != 0) {
+                printf("Resultado: %d\n", result);
+            }
+            break;
+        default:
+            printf("Operacao invalida.\n");
+            break;
+    }
+}
